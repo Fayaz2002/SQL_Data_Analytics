@@ -60,12 +60,30 @@ The script creates two views for quick access to summarized reports:
 
 ## ⚙️ Setup Instructions
 
-1. **Import the Script** into a MySQL-compatible environment (MySQL Workbench, phpMyAdmin, etc.).
-2. Ensure **CSV data** for `dim_customers`, `dim_products`, and `fact_sales` are already loaded.
-3. Run the script to:
-   - Create the database and tables
-   - Execute exploratory queries
-   - Generate summary views and reports
+1. **Run the SQL Script**  
+   - Use MySQL Workbench, phpMyAdmin, or any MySQL-compatible IDE to execute the `SQL_EDA_PROJECT.sql`.
 
-> 💡 To enable CSV imports, make sure `local_infile=1` is enabled in your MySQL server settings.
+2. **Import Data into Tables**  
+   Use **any one** of the following methods to import CSV data into the corresponding tables:
 
+   **Option 1: Using `LOAD DATA INFILE` (Command Line or SQL Query Editor)**  
+   - Enable CSV import by setting the global variable:  
+     ```sql
+     SET GLOBAL local_infile = 1;
+     ```
+   - Then use:
+     ```sql
+     LOAD DATA LOCAL INFILE 'path_to_file.csv'
+     INTO TABLE your_table
+     FIELDS TERMINATED BY ',' 
+     ENCLOSED BY '"'
+     LINES TERMINATED BY '\n'
+     IGNORE 1 ROWS;
+     ```
+
+   **Option 2: Using MySQL Workbench Import Wizard**  
+   - Right-click the table > *Table Data Import Wizard*
+   - Select your CSV file
+   - Follow the steps to map columns and import data
+
+> ⚠ Make sure your table structures match the CSV files (column names and data types).
