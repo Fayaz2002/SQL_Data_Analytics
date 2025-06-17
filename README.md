@@ -87,3 +87,9 @@ The script creates two views for quick access to summarized reports:
    - Follow the steps to map columns and import data
 
 > ⚠ Make sure your table structures match the CSV files (column names and data types).
+# Sample Results
+## Customer Report 
+![Customer_report](https://github.com/user-attachments/assets/d090e4d4-722e-493b-a5e0-710cfc6ae43f)
+
+## Product Report
+![Product Report](https://github.com/user-attachments/assets/16fefc5d-7f38-4f93-880d-10949d28ad6b)
